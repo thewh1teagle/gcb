@@ -4,7 +4,7 @@ Copy image or text into your clipboard, from the terminal!
 
 # Downloads
 
-Binaries available in github [releases](https://github.com/thewh1teagle/gcb/releases/tag/latest)
+Binaries available in github [releases](https://github.com/thewh1teagle/gcb/releases/latest)
 
 # Usage
 
