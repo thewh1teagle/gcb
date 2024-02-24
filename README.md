@@ -2,6 +2,10 @@
 
 Copy image or text into your clipboard, from the terminal!
 
+# Downloads
+
+https://github.com/thewh1teagle/gcb/releases/tag/latest
+
 # Usage
 
 ### Image
