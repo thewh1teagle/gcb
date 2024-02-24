@@ -15,10 +15,10 @@ gcb image.jpg
 
 ### Text
 ```console
-gcb "Paste this text into clipboard!"
+gcb "this text will pasted into clipboard!"
 ```
 
 ### Stdin
 ```console
-echo "hello" | gcb 
+echo "text or files can piped to gcb!" | gcb 
 ```
