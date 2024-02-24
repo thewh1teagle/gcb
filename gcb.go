@@ -2,9 +2,7 @@ package main
 
 import (
 	"bytes"
-	"fmt"
 	"io"
-	"io/ioutil"
 	"log"
 	"os"
 	"path/filepath"
@@ -55,7 +53,6 @@ func main() {
 				clipboard.Write(clipboard.FmtText, []byte(joinedArgs)) // Write the joined args to the clipboard
 				os.Exit(0)
 			} else {
-
 				log.Fatalf("failed to read file: %v", err)
 			}
 		}
@@ -63,7 +60,7 @@ func main() {
 		// Check if image or text file
 		if Contains(imgs_ext, ext) {
 			// Detected image file
-			content, err := ioutil.ReadFile(path)
+			content, err := os.ReadFile(path)
 			if err != nil {
 				// UTF-8 error?
 				log.Fatalf("failed to read file: %v", err)
@@ -71,7 +68,7 @@ func main() {
 			clipboard.Write(clipboard.FmtImage, content)
 		} else {
 			// try to decode into UTF-8 buffer
-			content, err := ioutil.ReadFile(path)
+			content, err := os.ReadFile(path)
 			if err != nil {
 				// UTF-8 error?
 				log.Fatalf("failed to read file: %v", err)
@@ -83,8 +80,7 @@ func main() {
 		// Copy from os.Stdin to the buffer until the delimiter is encountered
 		_, err = io.Copy(buf, os.Stdin)
 		if err != nil {
-			fmt.Fprintln(os.Stderr, "error reading standard input:", err)
-			return
+			log.Fatalf("error reading standard input: %v", err)
 		}
 		clipboard.Write(clipboard.FmtText, buf.Bytes())
 	}
