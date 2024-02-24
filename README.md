@@ -10,7 +10,7 @@ gcb image.jpg
 ```
 
 ### Text
-```
+```console
 gcb "Paste this text into clipboard!"
 ```
 
